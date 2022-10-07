@@ -1,9 +1,15 @@
-<% @cars.each do |car|%>
+
+<div class="container">
+  <div class="row row-cols-2">
+  <% @cars.each do |car|%>
 <% if user_signed_in?%>
 <% end %>
-  <% if car.images.attached?  %>
+  <div class="col">  <% if car.images.attached?  %>
   <% car.images.each do |image| %>
   <%= image_tag image %>
     <% end %> 
-  <% end %> 
+  <% end %> </div>
 <% end %>
+    
+  </div>
+</div>

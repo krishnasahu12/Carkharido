@@ -9,11 +9,10 @@ Rails.application.routes.draw do
 root to: "homes#index"
 
 resources :cars do
-  resources :likes
-  get 'cars/buy'
+  resources :reviews
 end
 
-resources :reviews
+resources :likes
 resources :profiles
 resources :enquiries
 resources :sells

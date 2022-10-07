@@ -1,0 +1,11 @@
+<% @car.reviews.each do |review|%>
+<p>
+  <strong>Reviewer:</strong>
+  <%= review.id %>
+</p>
+<p>
+  <strong>Comment:</strong>
+  <%= review.description%>
+</p>
+
+<% end %>

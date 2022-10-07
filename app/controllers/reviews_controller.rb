@@ -1,28 +1,21 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
-  def index
-    @reviews = Review.all
-  end
+	before_action :authenticate_user!
 
-  def show
-    @review = Review.find(params[:id])
-  end
+def create
+	if Review.create(review_params)
+		redirect_to cars_url
+	end
+end
 
-  def new
-    @review = Review.new
-  end
+def destroy
+	if @review.destroy
+		@car = Car.find(params[:car_id])
+		redirect_to @car
+	end
+end
 
-  def create
-    @review = Review.create(review_params)
-    if @review.save
-      redirect_to cars_index_path
-    else
-      render :new
-    end
-  end
-
-  private
-  def review_params
-    params.require(:review).permit(:description, :car_id)
-  end
+private
+def review_params
+	params.require(:review).permit!
+end
 end

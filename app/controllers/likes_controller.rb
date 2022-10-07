@@ -6,8 +6,15 @@ before_action :authenticate_user!
 			@car = Car.find(params[:car_id])
 			@like = @car.likes.create
 			if @like.save
-				redirect_to cars_path
+				redirect_to car_path(@car)
+			end
+		else
+		    @review = Review.find(params[:review_id])
+			@car = @review[:car_id]
+			@review.likes.create
+			if @review.save
+				redirect_to "http://localhost:3000/cars/#{@car}"
 			end
 		end
+		end
 	end
-end

@@ -5,18 +5,22 @@
 <h3> Car Manufacture Year -- <%= @car.maufacture_year %> </h3>
 <h3> Car Variant -- <%= @car.variant %> </h3>
 <h3> Car Image</h3>
- <%= link_to 'Your Review', new_review_path %>
-
 
 <% if @car.images.attached? %> 
     <% @car.images.each do |image| %>
      <%= image_tag image %>
-    <%= link_to 'like', car_likes_path(car_id: @car.id), :method => :post %>
+    <%= link_to 'like', cars_path %>
     <% if @like.present? %>
-    <%= link_to 'dislike', car_like_path(@car.id, @like.id), :method => :delete %>
+    <%= link_to 'dislike', cars_path %>
     <%end%><br>
 total_likes:<%= @car.likes.count %><br><br>
     <% end %>
+</ul>
+<h2>Reviews</h2>
+<%= render 'reviews/reviews'  %>
+
+<h2>Add a review:</h2>
+<%= render "reviews/form" %>
    </center>
 <% end %>
 

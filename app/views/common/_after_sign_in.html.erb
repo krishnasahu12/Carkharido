@@ -1,9 +1,8 @@
 <center>  <h1> Welcome to Car Kharido  </h1>
-<%= "Hi, #{current_user.email}" %>
+<%= "Hi, #{current_user.username}" %>
 </center>
 
-  <div class="container-fluid">
-      <ul class="navbar-nav ">
+      <ul class="navbar navbar-dark bg-dark">">
         <li class="nav-item">
           <a class="nav-link" href="#">
         <%= link_to 'Home', cars_path %>
@@ -25,10 +24,15 @@
           <% end %>
           </a>
         </li>
-        <li class="nav-item">
+        <%
+=begin%>
+ <li class="nav-item">
           <a class="nav-link" href="#">
-        <%= link_to 'Show Reviews', reviews_path %>
-          </a>
+        <%= link_to 'Show Reviews', car_reviews_path %>
+          </a>  
+<%
+=end%>
+
           <li class="nav-item">
           <a class="nav-link" href="#">
         <%= link_to 'Show Enquiries', enquiries_path %>
