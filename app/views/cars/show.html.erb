@@ -1,0 +1,23 @@
+<center>
+<h3> Car Brand -- <%= @car.brand %> </h3>
+<h3> Car Model -- <%= @car.model %> </h3>
+<h3> Car Price -- <%= @car.price %> </h3>
+<h3> Car Manufacture Year -- <%= @car.maufacture_year %> </h3>
+<h3> Car Variant -- <%= @car.variant %> </h3>
+<h3> Car Image</h3>
+ <%= link_to 'Your Review', new_review_path %>
+
+
+<% if @car.images.attached? %> 
+    <% @car.images.each do |image| %>
+     <%= image_tag image %>
+    <%= link_to 'like', car_likes_path(car_id: @car.id), :method => :post %>
+    <% if @like.present? %>
+    <%= link_to 'dislike', car_like_path(@car.id, @like.id), :method => :delete %>
+    <%end%><br>
+total_likes:<%= @car.likes.count %><br><br>
+    <% end %>
+   </center>
+<% end %>
+
+

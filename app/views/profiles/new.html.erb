@@ -1,0 +1,52 @@
+<center>
+    <h1> New Profile Form !!</h1><br>
+<%= form_for @profile do |f| %>
+    <div>
+        <%= f.label "First Name"  %>
+        <%= f.text_field :fname %><br /><br />
+    </div>
+    <div>
+        <%= f.label "Last Name" %>
+        <%= f.text_field :lname %><br /><br />
+    </div>
+    <div>
+        <%= f.label :gender, 'gender: ' %>
+        <%= f.label :Male %>
+        <%= f.radio_button :gender, 'Male' %>
+        <%= f.label :Female %>
+        <%= f.radio_button :gender, 'Female' %> <br /><br />
+    </div>
+    <div>
+        <%= f.label "Age" %>
+        <%= f.text_field :age %><br /><br />
+    </div>
+
+    <div>
+        <%= f.label "House No" %>
+        <%= f.text_field :house_no %><br /><br />
+    </div>
+    <div>
+        <%= f.label "Street" %>
+        <%= f.text_field :street %><br /><br />
+    </div>
+    <div>
+        <%= f.label "City" %>
+        <%= f.text_field :city %><br /><br />
+    </div>
+    <div>
+        <%= f.label "State" %>
+        <%= f.text_field :state %><br /><br />
+    </div>
+    <div>
+        <%= f.label "Country" %>
+        <%= f.text_field :country %><br /><br />
+    </div>
+    <div>
+        <%= f.label "Pincode" %>
+        <%= f.text_field :pincode %><br /><br />
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>  
+</center>
+<% end %>

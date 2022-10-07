@@ -1,0 +1,31 @@
+<center>
+	
+<h1> Car's Sell Form </h1>
+
+<%= form_for @sell do |f| %>
+
+<%= f.label "Brand" %>
+<%= f.select :brand, ['HONDA', 'TATA', 'AUDI', 'MARUTI', 'BMW'] %><br><br>
+
+<%= f.label "Model" %>
+<%= f.text_field :model %><br><br>
+
+<%= f.label "Price" %>
+<%= f.text_field :price %><br><br>
+
+<%= f.label :variant, 'Variant: ' %>
+<%= f.label :Petrol %>
+<%= f.radio_button :variant, 'Petrol' %>
+<%= f.label :Diesel %>
+<%= f.radio_button :variant, 'Diesel' %> <br><br>
+
+<%= f.label "Kms Driven" %>
+<%= f.text_field :kms_driven %><br><br>
+
+<%= f.label "Choose Image" %>
+<%= f.file_field :images %><br><br>
+
+<%= f.submit %>
+
+<% end %>
+</center>

@@ -1,0 +1,25 @@
+
+  <div  style="height: auto; width: auto; ">
+    <div class="col align-self-start">
+    <div class="container">
+    <div class="col-sm"><% if @cars.each do |car|
+    car.images.attached? %> 
+    <% car.images.each do |image| %>
+  
+  <%= image_tag image %><br><br>
+  <h4> Brand - <%= car.brand %> </h4>
+  <h4> Model - <%= car.model %> </h4>
+  <h4> Price - <%= car.price %> </h4>
+  <%= link_to 'like', car_likes_path(car_id: car.id), :method => :post %>
+  <% if @like.present? %>
+  <%= link_to 'dislike', car_like_path(car.id, @like.id), :method => :delete %>
+  <%end%><br>
+  Likes :<%= car.likes.count %><br><br>
+  <%= link_to 'Show Car', car_path(car) %> 
+</div>
+</div>
+</div>
+</div>
+     <% end %>
+    <% end %>
+<% end %>

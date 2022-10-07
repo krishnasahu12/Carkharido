@@ -1,0 +1,15 @@
+current directory: /home/software/carkharido/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/home/software/.rbenv/versions/3.0.2/bin/ruby -I /home/software/.rbenv/versions/3.0.2/lib/ruby/3.0.0 -r ./siteconf20221005-18423-9263mn.rb extconf.rb
+creating Makefile
+
+current directory: /home/software/carkharido/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/software/carkharido/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/software/carkharido/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20221005-18423-hbzdd1/skiptrace/internal

@@ -1,0 +1,9 @@
+<% @cars.each do |car|%>
+<% if user_signed_in?%>
+<% end %>
+  <% if car.images.attached?  %>
+  <% car.images.each do |image| %>
+  <%= image_tag image %>
+    <% end %> 
+  <% end %> 
+<% end %>

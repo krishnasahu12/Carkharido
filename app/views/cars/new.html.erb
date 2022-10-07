@@ -1,0 +1,28 @@
+<center>
+	
+<h1> New Car Form !!</h1>
+
+<%= form_for @car do |f| %><br>
+
+<%= f.label "Brand" %>
+<%= f.select :brand, [['HONDA','HONDA'],['TATA','TATA'],['AUDI','AUDI'],['BMW','BMW']] %><br><br>
+
+<%= f.label "Model" %>
+<%= f.text_field :model %><br><br>
+
+<%= f.label "Price" %>
+<%= f.text_field :price %><br><br>
+
+<%= f.label "Manufacture Year" %>
+<%= f.text_field :maufacture_year %><br><br>
+
+<%= f.label "Variant" %>
+<%= f.text_field :variant %><br><br>
+
+<%= f.label "Choose Image" %>
+<%= f.file_field :images, multiple: true %><br><br>
+
+<%= f.submit %>
+
+<% end %>
+</center>

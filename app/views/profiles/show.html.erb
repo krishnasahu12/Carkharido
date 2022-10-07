@@ -1,0 +1,20 @@
+<center>
+<h1> <%= @profile.user.username %>'s Profile </h1><br>
+<h2> First Name -- <%= @profile.fname %></h2>
+<h2> Last Name -- <%= @profile.lname %></h2>
+<h2> Gender -- <%= @profile.gender %></h2>
+<h2> Age -- <%= @profile.age %></h2>
+<h2> House Number -- <%= @profile.house_no %></h2>
+<h2> Street -- <%= @profile.street %></h2>
+<h2> City -- <%= @profile.city %></h2>
+<h2> State -- <%= @profile.state %></h2>
+<h2> Country -- <%= @profile.country %></h2>
+<h2> Pincode -- <%= @profile.pincode %></h2>
+
+<div>
+  <%= link_to "Edit", edit_profile_path(@profile) %>
+  <%= button_to "Destroy",profile_path(@profile),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+</div>
+ </center>
