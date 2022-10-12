@@ -14,9 +14,8 @@ class EnquiriesController < ApplicationController
   end
 
   def create
-    @enquiry = current_user.enquiries.create(enquiry_params)
-    if @enquiry.save
-      redirect_to cars_index_path
+    if Enquiry.create(enquiry_params)
+      redirect_to cars_path
     else
       render :new
     end
@@ -24,6 +23,6 @@ class EnquiriesController < ApplicationController
 
   private
   def enquiry_params
-    params.require(:enquiry).permit(:content,:contact_no)
+    params.require(:enquiry).permit(:content,:contact_no,:car_id)
   end
 end

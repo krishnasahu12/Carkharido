@@ -1,6 +1,11 @@
 <center>
 <%=form_for @enquiry do |f| %>
 <div>
+<%= f.label :car_id %><br>
+<%= f.text_field :car_id, :value => params["format"] %>
+</div>
+
+<div>
 <%= f.label "Content" %><br>
 <%= f.text_field :content %>
 </div>
