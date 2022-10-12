@@ -9,8 +9,9 @@
 
 <% if @car.images.attached? %>
     <% @car.images.each do |image| %>
-     <%= image_tag image %>
-    <%= link_to 'like', likes_path(car_id: @car.id), method: :post %>
+     <%= image_tag image %><br>
+    <%= link_to 'like', likes_path(car_id: @car.id), method: :post %><br>
+    <%= link_to 'Unlike', likes_path(car_id: @car.id), method: :destroy %><br>
     total_likes:<%= @car.likes.count %><br><br>
     <% end %>
 </ul>

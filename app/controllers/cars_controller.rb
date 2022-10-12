@@ -18,10 +18,6 @@ before_action :authenticate_user!, except: %i[index]
 	end
 end
 
-   def buy
-    @car = Car.where(brand:"AUDI")
-   end
-
    def show
 	    @car = Car.find(params[:id])
    end
