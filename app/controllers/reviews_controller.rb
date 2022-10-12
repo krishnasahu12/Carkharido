@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
 def create
 	if Review.create(review_params)
-		redirect_to cars_url
+		redirect_to cars_path
 	end
 end
 
@@ -16,6 +16,6 @@ end
 
 private
 def review_params
-	params.require(:review).permit!
+	params.require(:review).permit(:description,:car_id)
 end
 end

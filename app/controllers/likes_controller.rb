@@ -13,7 +13,7 @@ before_action :authenticate_user!
 			@car = @review[:car_id]
 			@review.likes.create
 			if @review.save
-				redirect_to "http://localhost:3000/cars/#{@car}"
+				redirect_to car_path(@car)
 			end
 		end
 		end

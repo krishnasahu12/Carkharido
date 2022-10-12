@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_06_114622) do
+ActiveRecord::Schema.define(version: 2022_10_12_125425) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 2022_10_06_114622) do
   create_table "enquiries", force: :cascade do |t|
     t.text "content"
     t.string "contact_no"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_enquiries_on_user_id"
+    t.integer "car_id", null: false
+    t.index ["car_id"], name: "index_enquiries_on_car_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -95,18 +95,6 @@ ActiveRecord::Schema.define(version: 2022_10_06_114622) do
     t.index ["car_id"], name: "index_reviews_on_car_id"
   end
 
-  create_table "sells", force: :cascade do |t|
-    t.string "brand"
-    t.string "model"
-    t.string "price"
-    t.string "variant"
-    t.string "kms_driven"
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_sells_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -124,8 +112,7 @@ ActiveRecord::Schema.define(version: 2022_10_06_114622) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cars", "users"
-  add_foreign_key "enquiries", "users"
+  add_foreign_key "enquiries", "cars"
   add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "cars"
-  add_foreign_key "sells", "users"
 end

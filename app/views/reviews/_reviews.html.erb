@@ -1,11 +1,8 @@
 <% @car.reviews.each do |review|%>
 <p>
-  <strong>Reviewer:</strong>
-  <%= review.id %>
-</p>
-<p>
   <strong>Comment:</strong>
   <%= review.description%>
+  <%= link_to 'like', likes_path(review_id: review.id), method: :post %>
+  total_likes:<%= review.likes.count %><br><br>
 </p>
-
 <% end %>

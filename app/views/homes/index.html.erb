@@ -1,15 +1,14 @@
 
 <div class="container">
-  <div class="row row-cols-2">
+  <div class="row row-cols-4">
   <% @cars.each do |car|%>
-<% if user_signed_in?%>
-<% end %>
-  <div class="col">  <% if car.images.attached?  %>
-  <% car.images.each do |image| %>
-  <%= image_tag image %>
-    <% end %> 
-  <% end %> </div>
-<% end %>
-    
+    <% if user_signed_in?%>
+    <% end %>
+      <div class="col">  <% if car.images.attached?  %>
+      <% car.images.each do |image| %>
+      <%= image_tag image %>
+        <% end %> 
+      <% end %> </div>
+    <% end %>
   </div>
 </div>

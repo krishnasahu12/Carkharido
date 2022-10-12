@@ -1,5 +1,5 @@
 <center>  <h1> Welcome to Car Kharido  </h1>
-<%= "Hi, #{current_user.username}" %>
+<h3> <%= "Hi, #{current_user.username}" %> </h3>
 </center>
 
       <ul class="navbar navbar-dark bg-dark">">
@@ -9,7 +9,7 @@
           </a>
         <li class="nav-item">
           <a class="nav-link" href="#">
-        <%= link_to 'Sell Car', new_sell_path %>
+        <%= link_to 'Sell Car'  %>
           </a>
           <li class="nav-item">
           <a class="nav-link" href="#">
@@ -24,16 +24,7 @@
           <% end %>
           </a>
         </li>
-        <%
-=begin%>
- <li class="nav-item">
-          <a class="nav-link" href="#">
-        <%= link_to 'Show Reviews', car_reviews_path %>
-          </a>  
-<%
-=end%>
-
-          <li class="nav-item">
+       <li class="nav-item">
           <a class="nav-link" href="#">
         <%= link_to 'Show Enquiries', enquiries_path %>
           </a>
@@ -42,18 +33,6 @@
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
           </a>
         </li>
-
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
     </div>
   </div>
 </nav>

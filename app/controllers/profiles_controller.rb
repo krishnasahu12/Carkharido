@@ -1,24 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @profiles = Profile.all
-  end
 
   def show
     @profile = Profile.find(params[:id])
-  end
-
-  def new
-    @profile = Profile.new
-  end
-
-  def create
-    @profile = current_user.build_profile(profile_params)
-    if @profile.save
-      redirect_to @profile
-    else
-      render :new
-    end
   end
 
   def edit
