@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :username, presence: true
   validates :mobile, presence: true
+  has_many :likes, as: :likeable ,dependent: :destroy
 
   attr_accessor :login
 

@@ -1,6 +1,12 @@
 class ReviewsController < ApplicationController
 	before_action :authenticate_user!
 
+def index
+	@reviews = Reviews.all
+end
+
+
+
 def create
 	if Review.create(review_params)
 		redirect_to cars_path

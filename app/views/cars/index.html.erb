@@ -1,3 +1,11 @@
+
+
+<div>
+<%= select_tag :brand, options_for_select(['TATA','HONDA','MAHENDRA','RENAULT','AUDI','BMW'], params[:brand]), onclick:"window.location.replace('/'+'company'+'/'+this.value);", prompt: 'Select Your Brand' %>
+</div>
+
+
+
 <div class="container text-center">
   <div class="row row-cols-4">
       <% @cars.each do |car|%>

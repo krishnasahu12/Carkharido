@@ -1,5 +1,5 @@
 class Car < ApplicationRecord
-  has_many :likes, as: :likeable
+  has_many :likes, as: :likeable ,dependent: :destroy
   belongs_to :user
   has_many_attached :images
   has_many :reviews

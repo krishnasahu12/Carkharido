@@ -10,5 +10,8 @@ end
 resources :likes
 resources :profiles
 resources :enquiries
+
+get '/company/:brand', to: 'cars#index'
+
 end
 

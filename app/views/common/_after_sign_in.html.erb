@@ -24,6 +24,14 @@
           <a class="nav-link" href="#">
         <%= link_to 'Show Enquiries', enquiries_path %>
           </a>
+        <%
+=begin%>
+ <li class="nav-item">
+          <a class="nav-link" href="#">
+        <%= link_to 'Show Reviews' %>
+          </a> 
+<%
+=end%>
         <li class="nav-item">
           <a class="nav-link" href="#">
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
