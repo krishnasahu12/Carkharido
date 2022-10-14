@@ -9,7 +9,8 @@ end
 
 def create
 	if Review.create(review_params)
-		redirect_to cars_path
+		@car = Car.find_by(id: params[:car_id])
+		redirect_to car_path(@car)
 	end
 end
 

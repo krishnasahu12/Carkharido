@@ -1,0 +1,11 @@
+<center>
+
+<h1> Buy Your Car Now !!</h1><br>
+
+<% if user_signed_in?%>
+<div>
+<%= select_tag :brand, options_for_select(['TATA','HONDA','MAHENDRA','RENAULT','AUDI','BMW'], params[:brand]), onclick:"window.location.replace('/'+'company'+'/'+this.value);", prompt: 'Select Your Brand' %>
+</div>
+<% end %>
+
+</center>

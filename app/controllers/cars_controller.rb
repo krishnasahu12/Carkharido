@@ -48,6 +48,9 @@ end
 	redirect_to root_path
   end
 
+  def new_buy
+  end
+
 private
 	def car_params
 	  params.require(:car).permit(:brand, :model, :price, :maufacture_year, :variant, images:[])
