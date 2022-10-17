@@ -12,7 +12,6 @@
     <% @car.images.each do |image| %>
      <%= image_tag image %><br>
 
-    
     <%= link_to 'like', likes_path(car_id: @car.id), method: :post %><br>
     total_likes:<%= @car.likes.count %><br><br>
     <% end %>

@@ -16,10 +16,14 @@
 <%= f.text_field :price %><br><br>
 
 <%= f.label "Manufacture Year" %>
-<%= f.text_field :maufacture_year %><br><br>
+<%= f.select :maufacture_year, (Date.today.year-50)..(Date.today.year), :selected => Date.today.year %>
+<br><br>
 
-<%= f.label "Variant" %>
-<%= f.text_field :variant %><br><br>
+<%= f.label :variant, 'Variant: ' %>
+<%= f.label :Petrol %>
+<%= f.radio_button :variant, 'Petrol' %>
+<%= f.label :Diesel %>
+<%= f.radio_button :variant, 'Diesel' %> <br><br>
 
 <%= f.label "Choose Image" %>
 <%= f.file_field :images, multiple: true %><br><br>

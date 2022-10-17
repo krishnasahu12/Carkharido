@@ -11,8 +11,9 @@ resources :likes
 resources :profiles
 resources :enquiries
 
-get '/company/:brand', to: 'cars#index'
+get '/company/:brand', to: 'cars#new_buy'
 get '/new/buy', to: 'cars#new_buy'
+get '/my/car', to: 'cars#my_car'
 
 
 end

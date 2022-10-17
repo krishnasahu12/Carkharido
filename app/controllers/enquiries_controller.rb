@@ -3,6 +3,7 @@ class EnquiriesController < ApplicationController
   
   def index
     @enquiry = Enquiry.all
+    @cars = current_user.cars
   end
 
   def show
@@ -15,7 +16,7 @@ class EnquiriesController < ApplicationController
 
   def create
     if Enquiry.create(enquiry_params)
-      redirect_to cars_path
+      redirect_to enquiries_path
     else
       render :new
     end

@@ -1,20 +1,22 @@
 <div class="container text-center">
-  <div class="row row-cols-4">
-      <% @cars.each do |car|%>
-        <div class="col">
-          <% if car.images.attached?  %>
-            <% car.images.each do |image| %>
-            <%= image_tag image %>
-            <% end %> 
-          <% end %> 
-          <h4> Brand - <%= car.brand %> </h4>
-          <h4> Model - <%= car.model %> </h4>
-          <h4> Price - <%= car.price %> </h4>
-          <% if user_signed_in?%>
-            <%= link_to 'Show Car', car_path(car) %> 
-          <% end %> 
-          </div>
-      <% end %> 
-  </div>
+<div class="row row-cols-4">
+  <% @cars.each do |car|%>
+  <div class="col">
+  <%= link_to(car) do %>
+      <% if car.images.attached?  %>
+        <% car.images.each do |image| %>
+          <%= image_tag image %>
+        <% end %>
+      <% end %>
+    <% end %>
+<h4> Brand - <%= car.brand %> </h4>
+<h4> Model - <%= car.model %> </h4>
+<h4> Price - <%= car.price %> </h4>
+    </div>
+<% end %>
 </div>
+</div>
+
+
+
 

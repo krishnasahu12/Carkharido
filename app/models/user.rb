@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_one :profile, :dependent => :destroy
   validates :email, presence: true
   validates :username, presence: true
-  validates :mobile, presence: true
+  validates :mobile, presence: true, length: { maximum:10}
 
   attr_accessor :login
 

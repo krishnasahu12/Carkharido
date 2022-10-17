@@ -2,14 +2,8 @@ class CarsController < ApplicationController
 before_action :authenticate_user!, except: %i[index]
 
   def index
-  	if params[:brand]
-		@cars = Car.where(brand: params[:brand]).where.not(user_id: current_user.id)
-	elsif current_user
-		@cars = Car.where.not(user_id: current_user.id)
-	else
-		@cars = Car.all
+	@cars = Car.all
   end
-end
 
   def new
    @car = Car.new
@@ -49,6 +43,17 @@ end
   end
 
   def new_buy
+	 if params[:brand]
+	 	@cars = Car.where(brand: params[:brand]).where.not(user_id: current_user.id)
+	 elsif current_user
+	 	@cars = Car.where.not(user_id: current_user.id)
+	 else
+	    @cars = Car.all
+	 end
+  end
+
+  def my_car
+	@cars = current_user.cars
   end
 
 private

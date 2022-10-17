@@ -24,19 +24,14 @@
           <%= link_to 'Edit Profile', edit_profile_path(current_user.profile.id)  %>
           <% end %>
           </a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+          <%= link_to 'My Car', my_car_path %>
         </li>
-       <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="#">
-        <%= link_to 'Show Enquiries', enquiries_path %>
-          </a>
-        <%
-=begin%>
- <li class="nav-item">
-          <a class="nav-link" href="#">
-        <%= link_to 'Show Reviews' %>
-          </a> 
-<%
-=end%>
+          <%= link_to 'Show Enquiries', enquiries_path %>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
