@@ -19,7 +19,7 @@
 <%= f.select :maufacture_year, (Date.today.year-50)..(Date.today.year), :selected => Date.today.year %>
 <br><br>
 
-<%= f.label :variant, 'Variant: ' %>
+<%= f.label :variant %>
 <%= f.label :Petrol %>
 <%= f.radio_button :variant, 'Petrol' %>
 <%= f.label :Diesel %>

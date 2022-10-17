@@ -5,13 +5,15 @@ def index
 	@reviews = Reviews.all
 end
 
-
-
 def create
 	if Review.create(review_params)
 		@car = Car.find_by(id: params[:car_id])
 		redirect_to car_path(@car)
 	end
+end
+
+def show
+   @review = Review.find(params[:id])
 end
 
 def destroy
